@@ -1,8 +1,25 @@
 # Face anonymization using AttGAN-PyTorch
 
+The anonymization method uses AttGAN, an encoder-decoder based neural network, for changing facial attributes. Anonymization is achieved by applying changes to different facial characteristics in two stages. Experiments show promising results, with up to 100% face detection rate. The new method achieves a high face detection rate by maintaining a human-looking face. However, optimizing the anonymization process requires individual adaptions. What works well for one face may not work well for another.
+
+Anonymization is the process of concealing the identity of persons in the data. The amount of change applied by the anonymization method can be represented numerically as a distance between the original and anonymized face. The distance is calculated using facenet-pytorch.
+
+![Teaser](https://github.com/eili/AttGAN-anonymizer/blob/master/pics/5941_test1.jpg)
+Test on the CelebA identity 5941
+![Teaser](https://github.com/eili/AttGAN-anonymizer/blob/master/pics/6011_test1.jpg)
+Test on the CelebA identity 6011
+![Teaser](https://github.com/eili/AttGAN-anonymizer/blob/master/pics/9739_test1.jpg)
+Test on the CelebA identity 9739
+![Teaser](https://github.com/eili/AttGAN-anonymizer/blob/master/pics/10154_test1.jpg)
+Test on the CelebA identity 10154
+![Teaser](https://github.com/eili/AttGAN-anonymizer/blob/master/pics/n00284_1.jpg)
+Test on the VGGFaces2 n00284 image
+![Teaser](https://github.com/eili/AttGAN-anonymizer/blob/master/pics/n00284_2.jpg)
+Another test on the VGGFaces2 n00284 image
+
 Based on the AttGAN-PyTorch:
-First install AttGAN-PyTorch and make it run. 
-The anonymization process generates a set of random attributes for the AttGAN. Image is processed two times with these attributes, the second time 
+First install AttGAN-PyTorch and make it run.
+The anonymization process generates a set of random attributes for the AttGAN. Image is processed two times with these attributes, the second time
 the attributes are inverted.
 
 
@@ -21,9 +38,18 @@ The original TensorFlow version can be found [here](https://github.com/LynnHo/At
 
 ## Requirements
 
-* Python 3
-* PyTorch 0.4.0
-* TensorboardX
+* Python 3.6
+* PyTorch 1.3.1
+* torchvision 0.4.1
+* tensorboardX
+* pandas 0.25.3
+* pillow 6.2.1
+* matplotlib 3.1.1
+* numpy 1.17.4
+* scikit-learn 0.22.2
+* scipy 1.3.2
+
+* facenet-pytorch 1.0.1
 
 ```bash
 pip3 install -r requirements.txt
